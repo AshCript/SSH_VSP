@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index" class="org.as.web.ClientAction" method="index">
+			<result name="success">views/Index.jsp</result>
+		</action>
+		<action name="client" class="org.as.web.ClientAction" method="getClients">
+			<result name="success">views/Clients.jsp</result>
+		</action>
+		<action name="saveClient" class="org.as.web.ClientAction" method="saveClient">
+			<result name="success">views/Clients.jsp</result>
+		</action>
+		<action name="addClient" class="org.as.web.ClientAction" method="addClient">
+			<result name="success">views/FormClient.jsp</result>
+		</action>
+		<action name="editClient" class="org.as.web.ClientAction" method="editClient">
+			<result name="success">views/FormClient.jsp</result>
+		</action>
+		<action name="deleteClient" class="org.as.web.ClientAction" method="deleteClient">
+			<result name="success">views/Clients.jsp</result>
+		</action>
+		<action name="sp" class="org.as.web.SmartphoneAction" method="getSp">
+			<result name="success">views/Smartphones.jsp</result>
+		</action>
+		<action name="listSp" class="org.as.web.SmartphoneAction" method="listSp">
+			<result name="success">views/ListSmartphones.jsp</result>
+		</action>
+		<action name="saveSp" class="org.as.web.SmartphoneAction" method="saveSp">
+			<result name="success">views/Smartphones.jsp</result>
+		</action>
+		<action name="aboutSp" class="org.as.web.SmartphoneAction" method="aboutSp">
+			<result name="success">views/AboutSmartphone.jsp</result>
+		</action>
+		<action name="addSp" class="org.as.web.SmartphoneAction" method="addSp">
+			<result name="success">views/FormSmartphones.jsp</result>
+		</action>
+		<action name="editSp" class="org.as.web.SmartphoneAction" method="editSp">
+			<result name="success">views/FormSmartphones.jsp</result>
+		</action>
+		<action name="deleteSp" class="org.as.web.SmartphoneAction" method="deleteSp">
+			<result name="success">views/Smartphones.jsp</result>
+		</action>
+		<action name="saveEditedSmartphone" class="org.as.web.SmartphoneAction" method="saveEditedSmartphone">
+			<result name="success">views/Smartphones.jsp</result>
+		</action>
+		<action name="cmd" class="org.as.web.CommandeAction" method="getClientSp">
+			<result name="success">views/Commandes.jsp</result>
+		</action>
+		<action name="saveCmd" class="org.as.web.CommandeAction" method="saveCmd">
+			<result name="success">views/Commandes.jsp</result>
+		</action>
+		<action name="addCmd" class="org.as.web.CommandeAction" method="addCmd">
+			<result name="success">views/FormCommande.jsp</result>
+		</action>
+		<action name="editCmd" class="org.as.web.CommandeAction" method="editCmd">
+			<result name="success">views/FormCommande.jsp</result>
+		</action>
+		<action name="deleteCmd" class="org.as.web.CommandeAction" method="deleteCmd">
+			<result name="success">views/Commandes.jsp</result>
+		</action>
+	</package>
+</struts>

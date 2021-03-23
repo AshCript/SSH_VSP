@@ -1,0 +1,58 @@
+.asLogo{
+	color: white;
+	margin: 20px auto;
+	border-radius: 10px;
+	font-size: 25px;
+}
+.asLogoBorder{
+	border: 5px solid cyan;
+}
+.asActiveItem, .asActiveItem:hover {
+	background-color: #1da0af;
+}
+.asWhite{
+	color: white;
+}
+.asWindow{
+	display: none;
+	position: fixed;
+	top: 20%;
+	left: 20%;
+	width: 60%;
+	height: 60%;
+	padding: 0px 100px;
+	background-color: #15737d;
+	border-radius: 20px;
+	color: white;
+	opacity: 1;
+	z-index: 1000000;
+	overflow: auto;
+	scrollbar-width: none;
+	
+	transition-property: opacity, left;
+	transition-duration: .5s;
+}
+.asWindow label{
+	font-size: 12px;
+}
+.asWindowTitle{
+	position: relative;
+	width: 100%;
+	margin: 5px 0;
+	text-align: center;
+	font-size: 25px;
+}
+.asTable{
+	display: inline-block;
+	margin: 10px;
+}
+.asTable td{
+	padding: 5px;
+}
+
+.asAlignFileButton{
+	background-color: black;
+}
+.pretend-small-button div{
+	color: white;
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"></constant>
+	<package name="default" namespace="/" extends="struts-default">
+		<default-action-ref name="index"></default-action-ref>
+		<action name="index" class="org.as.web.ClientAction" method="index">
+			<result name="success">views/Index.jsp</result>
+		</action>
+		<action name="client" class="org.as.web.ClientAction" method="getClients">
+			<result name="success">views/Clients.jsp</result>
+		</action>
+		<action name="saveClient" class="org.as.web.ClientAction" method="saveClient">
+			<result name="success">views/Clients.jsp</result>
+		</action>
+		<action name="editClient" class="org.as.web.ClientAction" method="editClient">
+			<result name="success">views/EditClient.jsp</result>
+		</action>
+		<action name="saveEditedClient" class="org.as.web.ClientAction" method="saveEditedClient">
+			<result name="success">views/Clients.jsp</result>
+		</action>
+		<action name="deleteClient" class="org.as.web.ClientAction" method="deleteClient">
+			<result name="success">views/Clients.jsp</result>
+		</action>
+		<action name="sp" class="org.as.web.SmartphoneAction" method="getSp">
+			<result name="success">views/Smartphones.jsp</result>
+		</action>
+		<action name="saveSmartphone" class="org.as.web.SmartphoneAction" method="saveSp">
+			<result name="success">views/Smartphones.jsp</result>
+		</action>
+		<action name="aboutSp" class="org.as.web.SmartphoneAction" method="aboutSp">
+			<result name="success">views/AboutSmartphone.jsp</result>
+		</action>
+		<action name="editSp" class="org.as.web.SmartphoneAction" method="editSp">
+			<result name="success">views/Smartphones.jsp</result>
+		</action>
+		<action name="deleteSp" class="org.as.web.SmartphoneAction" method="deleteSp">
+			<result name="success">views/Smartphones.jsp</result>
+		</action>
+		<action name="saveEditedSmartphone" class="org.as.web.SmartphoneAction" method="saveEditedSmartphone">
+			<result name="success">views/Smartphones.jsp</result>
+		</action>
+	</package>
+</struts>
