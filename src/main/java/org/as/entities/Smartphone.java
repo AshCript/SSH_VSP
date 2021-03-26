@@ -12,7 +12,7 @@ public class Smartphone implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int idSmartphone;
 	private String marque;
 	private String model;

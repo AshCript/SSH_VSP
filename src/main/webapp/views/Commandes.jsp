@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Gestion de vente de Smartphones</title>
+    <title>Gestion de vente de Smartphones </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
@@ -780,7 +780,21 @@
                                 <s:iterator value="listCommandes">
 	                                <tr>
 	                                    <td>
-	                                    	<s:property value="date"/>
+	                                    	<s:if test="%{dateCommande.getDate() < 10}">
+	                                    		0<s:property value="dateCommande.getDate()"/>
+	                                    	</s:if>
+	                                    	<s:else>
+	                                    		<s:property value="dateCommande.getDate()"/>
+	                                    	</s:else>
+	                                    	/
+	                                    	<s:if test="%{dateCommande.getMonth() < 10}">
+	                                    		0<s:property value="dateCommande.getMonth() +1"/>
+	                                    	</s:if>
+	                                    	<s:else>
+	                                    		<s:property value="dateCommande.getMonth() + 1"/>
+	                                    	</s:else>
+	                                    	/
+	                                    	<s:property value="dateCommande.getYear() + 1900"/>
 	                                    </td>
 	                                    <td>
 	                               				<s:property value="client.nom"/> <s:property value="client.prenom"/>
@@ -886,13 +900,13 @@
 	                               		</td>
 
 	                                    <s:url namespace="/" action="editCmd" var="lienEditCmd">
-	                                 		<s:param name="id">
-	                                 			<s:property value="id"/>
+	                                 		<s:param name="idCommande">
+	                                 			<s:property value="idCommande"/>
 	                                 		</s:param>
 	                                    </s:url>
 	                                    <s:url namespace="/" action="deleteCmd" var="lienDeleteCmd">
-	                                 		<s:param name="id">
-	                                 			<s:property value="id"/>
+	                                 		<s:param name="idCommande">
+	                                 			<s:property value="idCommande"/>
 	                                 		</s:param>
 	                                    </s:url>
 	                                    <td>

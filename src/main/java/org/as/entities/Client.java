@@ -1,6 +1,8 @@
 package org.as.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -12,7 +14,7 @@ public class Client implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.TABLE)
 	private int idClient;
 	private String nom;
 	private String prenom;
@@ -21,6 +23,7 @@ public class Client implements Serializable{
 	private String adresse;
 	private String ville;
 	
+
 	public Client() {
 	}
 	public Client(String nom, String prenom, String cin, char sexe, String adresse, String ville) {

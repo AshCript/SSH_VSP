@@ -692,7 +692,7 @@
                                                                                             <label class="onoffswitch-label" for="example2">
 																									<span class="onoffswitch-inner"></span>
 																									<span class="onoffswitch-switch"></span>
-																								</label>
+																							</label>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
@@ -825,7 +825,7 @@
 												Ajout
 											</s:if>
 											<s:elseif test="editMode==true">
-												Modification commande N° <s:property value="commande.id"/>
+												Modification commande N° <s:property value="commande.idCommande"/> 
 											</s:elseif>
 	                                    </a>
                                     </li>
@@ -840,7 +840,7 @@
 	                                                   
 	                                                   <div class="input-group date">
 				                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-				                                            <input type="text"  name="date" class="form-control" value='<s:property value="commande.date"/>'>
+				                                            <input type="date" name="dateString" class="form-control" value='<s:property value="dateString"/>'>
 				                                        </div>
 	                                                   <br/>
 	                                                   
@@ -972,7 +972,7 @@
 	                                       
 	                                        <br/><br/>
 	                                        <s:hidden name="editMode" value="%{editMode}"></s:hidden>
-	                                        <s:hidden name="id" value="%{id}"></s:hidden>
+	                                        <s:hidden name="idCommande" value="%{idCommande}"></s:hidden>
 	                                        <div class="row">
 	                                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	                                                <div class="text-center custom-pro-edt-ds">

@@ -5,10 +5,16 @@ import java.util.Date;
 import javax.persistence.*;
 
 @Entity
+@Table
 public class Commande {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	@GeneratedValue(strategy=GenerationType.TABLE)
+	private int idCommande;
+	
+	private String color;
+	private int quantite;
+	private int prixMGA;
+	private Date dateCommande;
 	
 	@ManyToOne
 	@JoinColumn
@@ -17,24 +23,20 @@ public class Commande {
 	@ManyToOne
 	@JoinColumn
 	private Smartphone smartphone;
-	private String color;
-	private int quantite;
-	private int prixMGA;
-	private Date date;
 	
 	public Commande() {
 	}
-	public Commande(String color, int quantite, int prixMGA, Date date) {
+	public Commande(String color, int quantite, int prixMGA, Date dateCommande) {
 		this.color = color;
 		this.quantite = quantite;
 		this.prixMGA = prixMGA;
-		this.date = date;
+		this.dateCommande = dateCommande;
 	}
-	public int getId() {
-		return id;
+	public int getIdCommande() {
+		return idCommande;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setIdCommande(int idCommande) {
+		this.idCommande = idCommande;
 	}
 	public Client getClient() {
 		return client;
@@ -66,10 +68,10 @@ public class Commande {
 	public void setPrixMGA(int prixMGA) {
 		this.prixMGA = prixMGA;
 	}
-	public Date getDate() {
-		return date;
+	public Date getDateCommande() {
+		return dateCommande;
 	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDateCommande(Date dateCommande) {
+		this.dateCommande = dateCommande;
 	}
 }
