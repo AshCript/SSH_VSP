@@ -952,14 +952,13 @@
 			                                            		var qte = document.getElementById("qte").value;
 			                                            		document.getElementById("xprixSP").value = txt;
 			                                            		document.getElementById("prixSP").innerHTML = txt + " Ar.";
-			                                            		
-			                                            		document.getElementById("xmontant").value = txt*qte;
+			                                            		document.getElementById("montant").value = txt*qte;
 			                                            		document.getElementById("montant").innerHTML = txt*qte + " Ar.";
 			                                            	}
 			                                            	
 			                                            	function changeMontant(){
 			                                            		var qte = document.getElementById("qte").value;
-			                                            		var prix = document.getElementById("prixSP").value;
+			                                            		var prix = document.getElementById("xprixSP").value;
 			                                            		var total = qte*prix;
 			                                            		document.getElementById("montant").value=total;
 			                                            		document.getElementById("montant").innerHTML=total + " Ar.";

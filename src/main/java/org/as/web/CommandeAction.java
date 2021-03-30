@@ -80,6 +80,8 @@ public class CommandeAction extends ActionSupport{
 	}
 	public String addCmd() {
 		commande = metierCmd.getCommande(idCommande);
+		sdf = new SimpleDateFormat("yyyy-MM-dd");
+		dateString = sdf.format(new Date());
 		return getClientSp();
 	}
 	public String editCmd() {

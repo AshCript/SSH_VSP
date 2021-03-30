@@ -898,7 +898,6 @@
 	                               			</s:else>
 	                               		</s:elseif>
 	                               		</td>
-
 	                                    <s:url namespace="/" action="editCmd" var="lienEditCmd">
 	                                 		<s:param name="idCommande">
 	                                 			<s:property value="idCommande"/>
@@ -913,9 +912,8 @@
 	                                    	<s:a href="%{lienEditCmd}" style="color: white;">
 	                                        	<button data-toggle="tooltip" title="Modifier" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 	                                    	</s:a>
-	                                    	<s:a href="%{lienDeleteCmd}" style="color: white;">
-	                                        	<button data-toggle="tooltip" title="Supprimer" class=" btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-	                                        </s:a>
+	                                    	
+	                                        	<button data-toggle="tooltip" title="Supprimer" class=" btn btn-danger" onclick="showWiwiBan()"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 	                                    </td>
 	                                </tr>
                                 </s:iterator>
@@ -1123,8 +1121,50 @@
 	            	</div>
 	        	</div>
 	    	</div>
-	    </s:elseif>
-    
+	</s:elseif>
+	<div id="messageBox" style="position: absolute;left: 0px; top: 0px; width: 100%; height: 100%; z-Index: -5;"></div>
+    <script type="text/javascript">
+		  	 showWiwiBan = () =>{
+		  		 /* document.getElementById("messageBox").style.zIndex = 0; */
+		  	  var wiwiMirror = '<div id="wiwi-mirror">';
+		  		    wiwiMirror+='<div class="wiwi-ban-container">';
+		  			wiwiMirror+='<div class="wiwi-ban-message">';
+		  			wiwiMirror+='Voulez-vous vraiment supprimer cette commande ?';
+		  			wiwiMirror+='</div>';
+		  			wiwiMirror+='<div class="wiwi-ban-btn-confirm">';
+		  			wiwiMirror+='<s:a href="%{lienDeleteCmd}" style="color: white;">';
+		  			wiwiMirror+='<button class="wiwi-btn-deny">';
+		  			wiwiMirror+='Oui';
+		  			wiwiMirror+='</button>';
+		  			wiwiMirror+='</s:a>';
+		  			wiwiMirror+='<button class="wiwi-btn-confirm" onclick="cancelAction()">';
+		  			wiwiMirror+='Non';
+		  			wiwiMirror+='</button>';
+		  			wiwiMirror+='</div>';
+		  			wiwiMirror+='</div>';
+		  			wiwiMirror+='</div>';
+		  			document.getElementById("messageBox").style.zIndex = 1000;
+		  			document.getElementById("messageBox").innerHTML = wiwiMirror;
+		  	  wiwiMirror.style.zIndex = 0;
+		  	  setInterval(() =>{
+		  		  wiwiMirror.style.opacity += .2;
+		  		  if(wiwiMirror.style.opacity == 1)
+		  		  	clearInterval();
+		  	  }, 250);
+		  	  			
+		  }
+		  cancelAction = () =>{
+			  
+		  	var wiwiMirror = document.getElementById('wiwi-mirror');
+		  	wiwiMirror.style.opacity = 0;  		
+		  	setInterval(() =>{
+		  		wiwiMirror.style.zIndex -= 5;
+		  	  	if(wiwiMirror.style.zIndex == -5)
+		  			document.getElementById("messageBox").style.zIndex = -5;
+		  	  		clearInterval();
+		  	}, 500);
+		  }
+	 </script>
     <!-- jquery
 		============================================ -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>

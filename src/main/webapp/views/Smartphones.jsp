@@ -849,9 +849,7 @@
 	                                    	<s:a href="%{lienEditSp}" style="color: white;">
 	                                        	<button data-toggle="tooltip" title="Modifier" class="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
 	                                    	</s:a>
-	                                    	<s:a href="%{lienDeleteSp}" style="color: white;">
-	                                        	<button data-toggle="tooltip" title="Supprimer" class=" btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
-	                                        </s:a>
+	                                        <button data-toggle="tooltip" title="Supprimer" class=" btn btn-danger" onclick="showWiwiBan()"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 	                                    </td>
 	                                </tr>
                                 </s:iterator>
@@ -1060,7 +1058,45 @@
 	        	</div>
 	    	</div>
 	    </s:elseif>
-    
+	    <div id="messageBox"></div>
+	  	<script type="text/javascript">
+		  	 showWiwiBan = () =>{
+		  	  var wiwiMirror = '<div id="wiwi-mirror">';
+		  		    wiwiMirror+='<div class="wiwi-ban-container">';
+		  			wiwiMirror+='<div class="wiwi-ban-message">';
+		  			wiwiMirror+='Voulez-vous vraiment supprimer iPhone 6 de la base de donnée?';
+		  			wiwiMirror+='</div>';
+		  			wiwiMirror+='<div class="wiwi-ban-btn-confirm">';
+		  			wiwiMirror+='<button class="wiwi-btn-deny" onclick="cancelAction()">';
+		  			wiwiMirror+='Annuler';
+		  			wiwiMirror+='</button>';
+		  			wiwiMirror+='<s:a href="%{lienDeleteSp}" style="color: white;">';
+		  			wiwiMirror+='<button class="wiwi-btn-confirm">';
+		  			wiwiMirror+='Confirmer';
+		  			wiwiMirror+='</button>';
+		  			wiwiMirror+='</s:a>';
+		  			wiwiMirror+='</div>';
+		  			wiwiMirror+='</div>';
+		  			wiwiMirror+='</div>';
+		  			document.getElementById("messageBox").innerHTML = wiwiMirror;
+		  	  wiwiMirror.style.zIndex = 0;
+		  	  setInterval(() =>{
+		  		  wiwiMirror.style.opacity += .2;
+		  		  if(wiwiMirror.style.opacity == 1)
+		  		  	clearInterval();
+		  	  }, 250);
+		  	  			
+		  }
+		  cancelAction = () =>{
+		  	var wiwiMirror = document.getElementById('wiwi-mirror');
+		  	wiwiMirror.style.opacity = 0;  		
+		  	setInterval(() =>{
+		  		wiwiMirror.style.zIndex -= 5;
+		  	  	if(wiwiMirror.style.zIndex == -5)
+		  	  		clearInterval();
+		  	}, 500);
+		  }
+	 </script>
     <!-- jquery
 		============================================ -->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>

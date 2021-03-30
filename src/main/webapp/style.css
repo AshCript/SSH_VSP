@@ -3796,6 +3796,86 @@ body{
     10%{width: 0px; top: 37px;}
     15%{width: 25px}
 }
+
+#wiwi-mirror{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.575);
+  transition-property: opacity, top;
+  transition-duration: .5s;
+  animation: showWiwiBan linear .5s;
+}
+@keyframes showWiwiBan{
+  0%{opacity: 0; top: -20px}
+  50%{top: 0px;}
+  100%{opacity: 1}
+}
+.wiwi-ban-container{
+  color: white;
+  font-family: sans-serif;
+  position: absolute;
+  width:50%;
+  height: 200px;
+  left: 25%;
+  top: 30%;
+  background-color: rgba(0, 0, 0, 0.651);
+  border-radius: 20px;
+  
+}
+.wiwi-ban-title{
+  position: relative;
+  width: 100%;
+  height: 20px;
+  text-transform: uppercase;
+  background-color: black;
+  border-radius: 20px 20px 0px 0px;
+  padding: 10px 0px;
+  text-align: center;
+}
+.wiwi-ban-message{
+  position: relative;
+  text-align: center;
+  padding-top: 50px;
+  height: 100%;
+}
+.wiwi-ban-btn-confirm{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.wiwi-ban-btn-confirm button{
+	border: none;
+  display: inline;
+  padding: 10px;
+  margin: 0px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 100px;
+}
+.wiwi-btn-deny{
+  background-color: rgba(212, 65, 65, 0.445);
+  transition-property: background-color;
+  transition-duration: .5s;
+  
+}
+.wiwi-btn-confirm{
+  background-color: rgba(16, 161, 180, 0.445);
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+.wiwi-btn-deny:hover{
+  background-color:rgba(212, 65, 65, 1);
+}
+.wiwi-btn-confirm:hover{
+  background-color: rgb(16, 161, 180);
+}
+
 /* ::selection {
 
     background: #4ECDC4;
